@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  height: 1
+  weight: 1
+  fly: 1
+  fight: 1
+  fire: 1
+  water: 1
+  electric: 1
+  ice: 1
+  total: 1
+  eating_habit: MyString
+  weapon: MyString
+  strength: MyString
+  trainer_id: 1
+
+two:
+  name: MyString
+  height: 1
+  weight: 1
+  fly: 1
+  fight: 1
+  fire: 1
+  water: 1
+  electric: 1
+  ice: 1
+  total: 1
+  eating_habit: MyString
+  weapon: MyString
+  strength: MyString
+  trainer_id: 1

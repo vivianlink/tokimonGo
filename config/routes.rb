@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'trainer_list/index'
+
+  get 'tokimon_list/index'
+
+  resources :trainers
+  resources :tokimons
   resources :widgets
 
   # The priority is based upon order of creation: first created -> highest priority.
