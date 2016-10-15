@@ -1,68 +1,16 @@
-# ruby-getting-started
 
-A barebones Rails app, which can easily be deployed to Heroku.
+Tokimon Go special features including:
 
-This application support the [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby) article - check it out.
+1. A storyline and rule about Tokimon in How to use @ https://vast-retreat-31358.herokuapp.com/faq/index
 
-## Running Locally
+2. Buttons in Home page, with every single pages in the webapp allowed to go back to home page by simply clicking home
 
-Make sure you have Ruby installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
+3. The award page which shows the strongest, heaviest, taller tokimons in the Tokimon database, as well as the Strongest Tokimon trainer in database, this gets updated as Tokimon gets updated too! As so, it acts as a leaderboard. It can be viewed by clickig 'awards' button in home page
 
-```sh
-$ git clone git@github.com:heroku/ruby-getting-started.git
-$ cd ruby-getting-started
-$ bundle install
-$ bundle exec rake db:create db:migrate
-$ heroku local
-```
+4. Header options and home button to easily move around webpages, options inclue Tokemon and Tokemon trainer database as well as the how to use!
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+5. Easy to use and sleek design
 
-## Deploying to Heroku
+6. Easily check Tokimon trainer of Tokimons (by clicking the name of trainer in Tokimon database) and what Tokimon Trainer own (by clicking the Tokimon trainer name in trainer database) 
 
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku run rake db:migrate
-$ heroku open
-```
-
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Docker
-
-The app can be run and tested using the [Heroku Docker CLI plugin](https://devcenter.heroku.com/articles/introduction-local-development-with-docker).
-
-Make sure the plugin is installed:
-
-    heroku plugins:install heroku-docker
-
-Configure Docker and Docker Compose:
-
-    heroku docker:init
-
-And run the app locally:
-
-    docker-compose up web
-
-The app will now be available on the Docker daemon IP on port 8080.
-
-To work with the local database and do migrations, you can open a shell:
-
-    docker-compose run shell
-    bundle exec rake db:migrate
-
-You can also use Docker to release to Heroku:
-
-    heroku create
-    heroku docker:release
-    heroku open
-
-## Documentation
-
-For more information about using Ruby on Heroku, see these Dev Center articles:
-
-- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
-
+To see the app : https://vast-retreat-31358.herokuapp.com/
