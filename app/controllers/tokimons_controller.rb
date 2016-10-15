@@ -118,8 +118,9 @@ class TokimonsController < ApplicationController
 
    # @params[:total] = Integer(@params[:fly]) + Integer(@params[:fight]) + Integer(@params[:fire]) + Integer(@params[:water]) + Integer(@params[:electric]) + Integer(@params[:ice])
 
-    if (Trainer.exists?(tokimon.trainer_id))
-      @old_tokimon_trainer = Trainer.find(@tokimon[:trainer_id])
+    @old_trainer_id = @tokimon[:trainer_id];
+    if (Trainer.exists?(@old_trainer_id))
+      @old_tokimon_trainer = Trainer.find(@old_trainer_id)
       @new_tokimon_trainer = Trainer.find(tokimon_params[:trainer_id])
 
       @old_tokimon_trainer_new_level = (@old_tokimon_trainer.tokimons.count - 1)/3 + 1
@@ -128,7 +129,7 @@ class TokimonsController < ApplicationController
 
     respond_to do |format|
       if @tokimon.update(@params)
-        if (Trainer.exists?(tokimon.trainer_id))
+        if (Trainer.exists?(@old_trainer_id))
           if (@old_tokimon_trainer != @new_tokimon_trainer) 
             if (@old_tokimon_trainer[:level] != @old_tokimon_trainer_new_level) 
               @old_tokimon_trainer.update(level: @old_tokimon_trainer_new_level)
@@ -161,13 +162,15 @@ class TokimonsController < ApplicationController
   # DELETE /tokimons/1
   # DELETE /tokimons/1.json
   def destroy
-    if (Trainer.exists?(tokimon.trainer_id))
-      @tokimon_trainer = Trainer.find(@tokimon[:trainer_id])
+    @trainer_id = @tokimon[:trainer_id]
+
+    if (Trainer.exists?(@trainer_id))
+      @tokimon_trainer = Trainer.find(@trainer_id)
     end
 
     @tokimon.destroy
     respond_to do |format|
-      if (Trainer.exists?(tokimon.trainer_id))
+      if (Trainer.exists?(@trainer_id))
         @new_level = (@tokimon_trainer.tokimons.count)/3 + 1
 
         if(@tokimon_trainer[:level] != @new_level)
