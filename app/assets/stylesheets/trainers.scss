@@ -1,3 +1,24 @@
 // Place all the styles related to the Trainers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Nova+Flat|Pacifico');
+
+.train-header {
+	padding: 30px;
+	font-family: 'Pacifico', cursive;	
+}
+
+table{
+	width:	95%;
+}
+
+th,td{
+	font-family: 'Nova Flat', cursive;
+	text-align: center;
+	padding: 3px;
+}
+
+table, th, td{
+	border: 1px solid black;
+}

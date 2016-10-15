@@ -17,47 +17,47 @@
   </div>
   <div class="field">
     <%= f.label :height %><br>
-    <%= f.number_field :height %>
+    <%= f.number_field :height, in: 0...1001 %>
   </div>
   <div class="field">
     <%= f.label :weight %><br>
-    <%= f.number_field :weight %>
+    <%= f.number_field :weight, in: 0...1001 %>
   </div>
   <div class="field">
     <%= f.label :fly %><br>
-    <%= f.number_field :fly %>
+    <%= f.number_field :fly, in: 0...101 %>
   </div>
   <div class="field">
     <%= f.label :fight %><br>
-    <%= f.number_field :fight %>
+    <%= f.number_field :fight, in: 0...101 %>
   </div>
   <div class="field">
     <%= f.label :fire %><br>
-    <%= f.number_field :fire %>
+    <%= f.number_field :fire, in: 0...101 %>
   </div>
   <div class="field">
     <%= f.label :water %><br>
-    <%= f.number_field :water %>
+    <%= f.number_field :water, in: 0...101 %>
   </div>
   <div class="field">
     <%= f.label :electric %><br>
-    <%= f.number_field :electric %>
+    <%= f.number_field :electric, in: 0...101 %>
   </div>
   <div class="field">
     <%= f.label :ice %><br>
-    <%= f.number_field :ice %>
+    <%= f.number_field :ice, in: 0...101 %>
   </div>
   <div class="field">
     <%= f.label :eating_habit %><br>
-    <%= f.text_field :eating_habit %>
+    <%= f.select :eating_habit, options_for_select([["Select One", ""], "Vegan", "Meat only", "Omnivore", "Other"]), :class => 'genForm_dropBox' %>
   </div>
   <div class="field">
     <%= f.label :weapon %><br>
-    <%= f.text_field :weapon %>
+    <%= f.select :weapon, options_for_select([["Select One", ""], "Yes", "No"]), :class => 'genForm_dropBox' %>
   </div>
   <div class="field">
     <%= f.label :strength %><br>
-    <%= f.text_field :strength %>
+    <%= f.select :strength, options_for_select([["Select One", ""], "Electric", "Fly", "Fight", "Fire", "Ice", "Water"]), :class => 'genForm_dropBox' %>
   </div>
   <div class="field">
     <%= f.label :trainer_id %><br>

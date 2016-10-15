@@ -2,6 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
+
+
+.welcome {
+	color: #189DD1;
+	background-color: white; 
 	text-align: center;
+	font-family: 'Bungee Inline', cursive;
+	font-size: 80px;
+	border-style: double;
+	border-color: #F5A9A9;
+	border-width: 8px;
+}
+
+.option {
+	font-size: 50px;
+	text-align: center;
+	padding-top: 30px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.option-buttons {
+	text-align: center;
+	font-size: 35px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+}
+
+html, body {
+	height: 100%;
+	background-color: #8DD2EE;
+}
+
+.tokilist{
+	margin-top: 40px;
+	padding: 9px;
+}
+
+.trainlist{
+	margin-top: 30px;
+	padding: 9px;
+}
+
+.tokilist, .trainlist{
+	border-style : solid; 
+	border-radius : 25px;
+	display: inline-block;
+	background-color: white;
+	width: 220px;
 }

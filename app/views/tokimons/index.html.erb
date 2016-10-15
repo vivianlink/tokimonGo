@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tokimons</h1>
+<h1 class = "toki-header">Tokimons Inventory</h1>
 
-<table>
+<table align="center">
   <thead>
     <tr>
       <th>Name</th>
@@ -39,7 +39,7 @@
         <td><%= tokimon.eating_habit %></td>
         <td><%= tokimon.weapon %></td>
         <td><%= tokimon.strength %></td>
-        <td><%= tokimon.trainer_id %></td>
+        <td><a href="/trainers/<%= tokimon.trainer_id %>"><%= Trainer.find(tokimon.trainer_id).name %></a></td>
         <td><%= link_to 'Show', tokimon %></td>
         <td><%= link_to 'Edit', edit_tokimon_path(tokimon) %></td>
         <td><%= link_to 'Destroy', tokimon, method: :delete, data: { confirm: 'Are you sure?' } %></td>

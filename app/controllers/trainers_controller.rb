@@ -10,6 +10,7 @@ class TrainersController < ApplicationController
   # GET /trainers/1
   # GET /trainers/1.json
   def show
+    @trainer_tokimons = @trainer.tokimons
   end
 
   # GET /trainers/new
@@ -27,6 +28,7 @@ class TrainersController < ApplicationController
     # @params[:level] = params 
 
     @trainer = Trainer.new(trainer_params)
+    @trainer[:level] = 1
 
     respond_to do |format|
       if @trainer.save
@@ -43,7 +45,7 @@ class TrainersController < ApplicationController
   # PATCH/PUT /trainers/1.json
   def update
     # @params = trainer_params
-    # puts(@trainer.tokimons)
+    puts(@trainer.tokimons.count)
 
     respond_to do |format|
       if @trainer.update(trainer_params)
@@ -59,6 +61,11 @@ class TrainersController < ApplicationController
   # DELETE /trainers/1
   # DELETE /trainers/1.json
   def destroy
+    # destroy each tokimon belonging to the trainer
+    @trainer.tokimons.each do |tokimon|
+      tokimon.destroy
+    end
+
     @trainer.destroy
     respond_to do |format|
       format.html { redirect_to trainers_url, notice: 'Trainer was successfully destroyed.' }

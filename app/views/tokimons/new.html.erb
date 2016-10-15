@@ -1,5 +1,10 @@
 <h1>New Tokimon</h1>
 
-<%= render 'form' %>
+<% if (@trainers_count == 0) %>
+	There is no trainer for your tokimon! Please, <%= link_to 'create a trainer first', trainers_path %>
+	<br>
+<% else %>	
+	<%= render 'form' %>
+<% end %>
 
 <%= link_to 'Back', tokimons_path %>
