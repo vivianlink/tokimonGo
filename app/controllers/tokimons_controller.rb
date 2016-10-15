@@ -154,17 +154,25 @@ class TokimonsController < ApplicationController
   # DELETE /tokimons/1
   # DELETE /tokimons/1.json
   def destroy
-    @tokimon_trainer = Trainer.find(@tokimon[:trainer_id])
+    if (Trainer.exists?(tokimon.trainer_id))
+      @tokimon_trainer = Trainer.find(@tokimon[:trainer_id])
+    end
+
     @tokimon.destroy
     respond_to do |format|
       @new_level = (@tokimon_trainer.tokimons.count)/3 + 1
 
-      if(@tokimon_trainer[:level] != @new_level)
-        @tokimon_trainer.update(level: @new_level)
-        format.html { redirect_to @tokimon, notice: 'Tokimon was successfully destroyed. ' + @tokimon_trainer[:name] + ' level down!' }
+      if (Trainer.exists?(tokimon.trainer_id))
+        if(@tokimon_trainer[:level] != @new_level)
+          @tokimon_trainer.update(level: @new_level)
+          format.html { redirect_to @tokimon, notice: 'Tokimon was successfully destroyed. ' + @tokimon_trainer[:name] + ' level down!' }
+        else
+          format.html { redirect_to @tokimon, notice: 'Tokimon was successfully destroyed.' }
+        end
       else
         format.html { redirect_to @tokimon, notice: 'Tokimon was successfully destroyed.' }
-      end
+      end 
+
 
       format.json { head :no_content }
     end
