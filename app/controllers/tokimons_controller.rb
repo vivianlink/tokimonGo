@@ -118,29 +118,36 @@ class TokimonsController < ApplicationController
 
    # @params[:total] = Integer(@params[:fly]) + Integer(@params[:fight]) + Integer(@params[:fire]) + Integer(@params[:water]) + Integer(@params[:electric]) + Integer(@params[:ice])
 
-    @old_tokimon_trainer = Trainer.find(@tokimon[:trainer_id])
-    @new_tokimon_trainer = Trainer.find(tokimon_params[:trainer_id])
+    if (Trainer.exists?(tokimon.trainer_id))
+      @old_tokimon_trainer = Trainer.find(@tokimon[:trainer_id])
+      @new_tokimon_trainer = Trainer.find(tokimon_params[:trainer_id])
 
-    @old_tokimon_trainer_new_level = (@old_tokimon_trainer.tokimons.count - 1)/3 + 1
-    @new_tokimon_trainer_new_level = (@new_tokimon_trainer.tokimons.count + 1)/3 + 1
+      @old_tokimon_trainer_new_level = (@old_tokimon_trainer.tokimons.count - 1)/3 + 1
+      @new_tokimon_trainer_new_level = (@new_tokimon_trainer.tokimons.count + 1)/3 + 1
+    end
 
     respond_to do |format|
       if @tokimon.update(@params)
-        if (@old_tokimon_trainer != @new_tokimon_trainer) 
-          if (@old_tokimon_trainer[:level] != @old_tokimon_trainer_new_level) 
-            @old_tokimon_trainer.update(level: @old_tokimon_trainer_new_level)
-          end
+        if (Trainer.exists?(tokimon.trainer_id))
+          if (@old_tokimon_trainer != @new_tokimon_trainer) 
+            if (@old_tokimon_trainer[:level] != @old_tokimon_trainer_new_level) 
+              @old_tokimon_trainer.update(level: @old_tokimon_trainer_new_level)
+            end
 
-          if (@new_tokimon_trainer[:level] != @new_tokimon_trainer_new_level) 
-            format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated. ' + @new_tokimon_trainer[:name] + ' level up!' }
+            if (@new_tokimon_trainer[:level] != @new_tokimon_trainer_new_level) 
+              format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated. ' + @new_tokimon_trainer[:name] + ' level up!' }
 
-            @new_tokimon_trainer.update(level: @new_tokimon_trainer_new_level)
+              @new_tokimon_trainer.update(level: @new_tokimon_trainer_new_level)
+            else
+              format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated.' }
+            end
           else
             format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated.' }
           end
         else
           format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated.' }
         end
+
 
         format.json { render :show, status: :ok, location: @tokimon }
       else
