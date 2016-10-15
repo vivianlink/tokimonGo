@@ -7,6 +7,7 @@
   <span class="awards-button" onclick="toggleAwards()">AWARDS</span><br>
 </div>
 <div class="awards">
+<% if ((Tokimon.all.count > 0) && (Trainer.all.count > 0)) %>
   <div class="award">
     <div class="award-title">
       Fattest tokimon:
@@ -55,8 +56,11 @@
        with level <%= @strongest_trainer.level %>
     </div>
   </div>
+<% else %>
+  <div class="award">
+    <div class="award-title">
+      You need to have Tokimons and trainers to win the awards!
+    </div>  
+  </div>
+<% end %>
 </div>
-
-<script>
-  // alert('asd');
-</script>
