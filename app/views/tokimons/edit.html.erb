@@ -1,6 +1,14 @@
-<h1>Editing Tokimon</h1>
+<h1 class="page-title">Editing Tokimon</h1>
 
-<%= render 'form' %>
+<div class="edit-form">
+	<%= render 'form' %>
+</div>	
 
-<%= link_to 'Show', @tokimon %> |
-<%= link_to 'Back', tokimons_path %>
+<div class="white-button-wrapper">
+  <span class= "white-button">
+	<%= link_to 'Show', @tokimon %>
+  </span> 
+  <span class= "white-button">
+	<%= link_to 'Back', tokimons_path %>
+  </span>
+</div>

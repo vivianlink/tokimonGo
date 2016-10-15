@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,800');
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
 
 
 .welcome {
@@ -41,15 +42,54 @@ html, body {
 	padding: 9px;
 }
 
-.trainlist{
+.trainlist, .awards-button, .how-to-use-button{
 	margin-top: 30px;
 	padding: 9px;
 }
 
-.tokilist, .trainlist{
+.tokilist, .trainlist, .awards-button, .how-to-use-button{
 	border-style : solid; 
 	border-radius : 25px;
 	display: inline-block;
 	background-color: white;
 	width: 220px;
+}
+
+.awards {
+	display: none;
+}
+
+.award {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.award-title {
+	font-family: 'Bungee Inline', cursive;
+	display: inline-block;
+	font-size: 30px;
+}
+
+.winner-name {
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #ff6ebf; 
+	font-size: 60px;
+}
+
+.winner {
+	font-size: 50px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 30px;
+	color: #088DC1;
+
+}
+
+.awards-button {    
+	color: #337ab7;
+	cursor: pointer;
+}
+
+.awards-button:hover {
+	color: #23527c;
+	text-decoration: underline;
 }

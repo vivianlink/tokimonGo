@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function toggleAwards() {
+	var awardsEl = $('.awards');
+
+	if (awardsEl.css('display') != 'none') {
+		awardsEl.hide();
+	} else {
+		awardsEl.show();
+	}
+}

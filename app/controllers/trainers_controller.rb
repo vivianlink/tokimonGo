@@ -45,7 +45,6 @@ class TrainersController < ApplicationController
   # PATCH/PUT /trainers/1.json
   def update
     # @params = trainer_params
-    puts(@trainer.tokimons.count)
 
     respond_to do |format|
       if @trainer.update(trainer_params)

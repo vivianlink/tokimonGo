@@ -2,7 +2,7 @@
 
 <h1 class = "train-header" >Trainers Inventory</h1>
 
-<table>
+<table align= "center">
   <thead>
     <tr>
       <th>Name</th>
@@ -22,14 +22,17 @@
         <td><%= trainer.description %></td>
         <td><%= trainer.gender %></td>
         <td><%= trainer.training_ground %></td>
-        <td><%= link_to 'Show', trainer %></td>
+        <td><%= link_to 'Profile', trainer %></td>
         <td><%= link_to 'Edit', edit_trainer_path(trainer) %></td>
-        <td><%= link_to 'Destroy', trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete Trainer', trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Trainer', new_trainer_path %>
+<div class="white-button-wrapper">
+  <span class= "white-button">
+    <%= link_to 'Create Trainer', new_trainer_path %>
+  </span>
+</div>  

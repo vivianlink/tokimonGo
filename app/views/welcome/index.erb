@@ -1,6 +1,62 @@
 <h1 class="welcome">Welcome to Tokimon Go!</h1>
 <div class="option"> Please, select an option: </div>
 <div class= "option-buttons">
+  <a class="how-to-use-button" href="/faq/index">HOW TO USE</a><br>
   <a class= "tokilist" href="/tokimons">TOKIMONS</a><br>
-  <a class="trainlist" href="/trainers">TRAINERS</a>
+  <a class="trainlist" href="/trainers">TRAINERS</a><br>
+  <span class="awards-button" onclick="toggleAwards()">AWARDS</span><br>
 </div>
+<div class="awards">
+  <div class="award">
+    <div class="award-title">
+      Fattest tokimon:
+    </div>
+    <div class="winner">
+      <% @fattest_tokimon = Tokimon.order("weight DESC").first %>
+      <span class="winner-name">
+        <%= @fattest_tokimon.name %>
+      </span> 
+      with weight <%= @fattest_tokimon.weight %>
+    </div>
+  </div>
+  <div class="award">
+    <div class="award-title">
+      Tallest tokimon:
+    </div>
+    <div class="winner">
+      <% @tallest_tokimon = Tokimon.order("height DESC").first %>
+      <span class="winner-name">
+        <%= @tallest_tokimon.name %>
+      </span> 
+       with height <%= @tallest_tokimon.height %>
+    </div>
+  </div>
+  <div class="award">
+    <div class="award-title">
+      Strongest tokimon:
+    </div>
+    <div class="winner">
+      <% @strongest_tokimon = Tokimon.order("total DESC").first %>
+      <span class="winner-name">
+        <%= @strongest_tokimon.name %>
+      </span> 
+       with total power <%= @strongest_tokimon.total %>
+    </div>
+  </div>
+  <div class="award">
+    <div class="award-title">
+      Trainer with the highest level:
+    </div>
+    <div class="winner">
+      <% @strongest_trainer = Trainer.order("level DESC").first %>
+      <span class="winner-name">
+        <%= @strongest_trainer.name %>
+      </span> 
+       with level <%= @strongest_trainer.level %>
+    </div>
+  </div>
+</div>
+
+<script>
+  // alert('asd');
+</script>

@@ -1,0 +1,23 @@
+// Place all the styles related to the faq controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.intro {
+	padding: 10px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+}
+
+.guide-wrapper {
+	text-align: center;
+}
+
+.guide-style {
+	display: inline-block;
+	border-style: double;
+	background-color: #F5A9A9;
+	font-family: 'Raleway', sans-serif;
+	width: 90%;
+	border-radius: 15px;
+	font-size: 2em;
+}

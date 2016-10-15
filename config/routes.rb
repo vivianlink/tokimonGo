@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'faq/index'
+
   get 'trainer_list/index'
 
   get 'tokimon_list/index'

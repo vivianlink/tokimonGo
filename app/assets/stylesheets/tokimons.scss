@@ -4,9 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css?family=Nova+Flat|Pacifico');
 
-.toki-header {
+.toki-header{
 	padding: 30px;
 	font-family: 'Pacifico', cursive;	
+}
+
+#notice {
+	font-size: 30px;
+	font-family: 'Nova Flat', cursive;
 }
 
 table{
@@ -21,4 +26,38 @@ th,td{
 
 table, th, td{
 	border: 1px solid black;
+}
+
+.white-button-wrapper {
+	padding: 20px; 
+	text-align: center
+}
+
+.white-button{
+	border-radius: 30px;
+	border-style: bold; 
+	border-color: #6CAAF8;
+	border-width: 5px;
+	padding: 10px; 
+	background-color: white;
+	transition: background-color 0.2s ease-out;
+}
+
+.white-button:hover {
+	background-color: gray;
+}
+
+.white-button:hover a {
+	color: white;
+}
+
+.white-button a{
+	color: #396FB3;
+	font-family: 'Nova Flat', cursive;
+	font-size: 20px; 	
+}
+
+.tokimon-show p {
+	font-size: 20px;
+	font-family: 'Pacifico', cursive;	
 }

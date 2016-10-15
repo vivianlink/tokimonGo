@@ -22,3 +22,45 @@ th,td{
 table, th, td{
 	border: 1px solid black;
 }
+
+
+.create-train-wrapper {
+	padding: 20px; 
+	text-align: center
+}
+
+.create-train{
+	border-radius: 30px;
+	border-style: bold; 
+	border-color: #6CAAF8;
+	border-width: 5px;
+	padding: 10px; 
+	background-color: white;
+	transition: background-color 0.2s ease-out;
+}
+
+.create-train:hover {
+	background-color: gray;
+}
+
+.create-train:hover a {
+	color: white;
+}
+
+.create-train a{
+	color: #396FB3;
+	font-family: 'Nova Flat', cursive;
+	font-size: 20px; 	
+}
+
+.page-title {
+	padding: 30px;
+	font-family: 'Pacifico', cursive;	
+}
+
+.edit-form {
+	padding-left: 50px;
+	color: #000;
+	font-family: 'Nova Flat', cursive;
+	font-size: 20px; 	
+}

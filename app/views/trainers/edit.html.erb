@@ -1,6 +1,14 @@
-<h1>Editing Trainer</h1>
+<h1 class="page-title">Editing Trainer</h1>
 
-<%= render 'form' %>
+<div class="edit-form">
+	<%= render 'form' %>
+</div>	
 
-<%= link_to 'Show', @trainer %> |
-<%= link_to 'Back', trainers_path %>
+<div class="white-button-wrapper">
+  <span class= "white-button">
+    <%= link_to 'Show', @trainer %> 
+  </span> 
+  <span class= "white-button">
+    <%= link_to 'Back', trainers_path %>
+  </span>
+</div>

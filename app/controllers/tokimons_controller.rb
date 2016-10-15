@@ -10,7 +10,6 @@ class TokimonsController < ApplicationController
 
     # puts(@tokimons)
     @tokimons.each_with_index do |tokimon, index| 
-      puts(@tokimons[index][:name])
       # @tokimons[index][:trainer_name] = "asd"
       # @tokimons[index][:trainer_name] = Trainer.find(tokimon.trainer_id).name
       # puts(@tokimons[index][:trainer_name])
@@ -122,12 +121,12 @@ class TokimonsController < ApplicationController
     @old_tokimon_trainer = Trainer.find(@tokimon[:trainer_id])
     @new_tokimon_trainer = Trainer.find(tokimon_params[:trainer_id])
 
-    if (@old_tokimon_trainer != @new_tokimon_trainer) 
-      @old_tokimon_trainer_new_level = (@old_tokimon_trainer.tokimons.count - 1)/3 + 1
-      @new_tokimon_trainer_new_level = (@new_tokimon_trainer.tokimons.count + 1)/3 + 1
+    @old_tokimon_trainer_new_level = (@old_tokimon_trainer.tokimons.count - 1)/3 + 1
+    @new_tokimon_trainer_new_level = (@new_tokimon_trainer.tokimons.count + 1)/3 + 1
 
-      respond_to do |format|
-        if @tokimon.update(@params)
+    respond_to do |format|
+      if @tokimon.update(@params)
+        if (@old_tokimon_trainer != @new_tokimon_trainer) 
           if (@old_tokimon_trainer[:level] != @old_tokimon_trainer_new_level) 
             @old_tokimon_trainer.update(level: @old_tokimon_trainer_new_level)
           end
@@ -139,15 +138,15 @@ class TokimonsController < ApplicationController
           else
             format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated.' }
           end
-
-          format.json { render :show, status: :ok, location: @tokimon }
         else
-          format.html { render :edit }
-          format.json { render json: @tokimon.errors, status: :unprocessable_entity }
+          format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated.' }
         end
+
+        format.json { render :show, status: :ok, location: @tokimon }
+      else
+        format.html { render :edit }
+        format.json { render json: @tokimon.errors, status: :unprocessable_entity }
       end
-    else 
-      redirect_to action: "show"
     end
 
   end

@@ -1,74 +1,82 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tokimon.name %>
-</p>
+<div class="tokimon-show">
+  <p>
+    <strong>Name:</strong>
+    <%= @tokimon.name %>
+  </p>
 
-<p>
-  <strong>Height:</strong>
-  <%= @tokimon.height %>
-</p>
+  <p>
+    <strong>Height:</strong>
+    <%= @tokimon.height %>
+  </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @tokimon.weight %>
-</p>
+  <p>
+    <strong>Weight:</strong>
+    <%= @tokimon.weight %>
+  </p>
 
-<p>
-  <strong>Fly:</strong>
-  <%= @tokimon.fly %>
-</p>
+  <p>
+    <strong>Fly:</strong>
+    <%= @tokimon.fly %>
+  </p>
 
-<p>
-  <strong>Fight:</strong>
-  <%= @tokimon.fight %>
-</p>
+  <p>
+    <strong>Fight:</strong>
+    <%= @tokimon.fight %>
+  </p>
 
-<p>
-  <strong>Fire:</strong>
-  <%= @tokimon.fire %>
-</p>
+  <p>
+    <strong>Fire:</strong>
+    <%= @tokimon.fire %>
+  </p>
 
-<p>
-  <strong>Water:</strong>
-  <%= @tokimon.water %>
-</p>
+  <p>
+    <strong>Water:</strong>
+    <%= @tokimon.water %>
+  </p>
 
-<p>
-  <strong>Electric:</strong>
-  <%= @tokimon.electric %>
-</p>
+  <p>
+    <strong>Electric:</strong>
+    <%= @tokimon.electric %>
+  </p>
 
-<p>
-  <strong>Ice:</strong>
-  <%= @tokimon.ice %>
-</p>
+  <p>
+    <strong>Ice:</strong>
+    <%= @tokimon.ice %>
+  </p>
 
-<p>
-  <strong>Total:</strong>
-  <%= @tokimon.total %>
-</p>
+  <p>
+    <strong>Total:</strong>
+    <%= @tokimon.total %>
+  </p>
 
-<p>
-  <strong>Eating habit:</strong>
-  <%= @tokimon.eating_habit %>
-</p>
+  <p>
+    <strong>Eating habit:</strong>
+    <%= @tokimon.eating_habit %>
+  </p>
 
-<p>
-  <strong>Weapon:</strong>
-  <%= @tokimon.weapon %>
-</p>
+  <p>
+    <strong>Weapon:</strong>
+    <%= @tokimon.weapon %>
+  </p>
 
-<p>
-  <strong>Strength:</strong>
-  <%= @tokimon.strength %>
-</p>
+  <p>
+    <strong>Strength:</strong>
+    <%= @tokimon.strength %>
+  </p>
 
-<p>
-  <strong>Trainer:</strong>
-  <%= @tokimon.trainer_id %>
-</p>
+  <p>
+    <strong>Trainer:</strong>
+    <%= @tokimon.trainer_id %>
+  </p>
 
-<%= link_to 'Edit', edit_tokimon_path(@tokimon) %> |
-<%= link_to 'Back', tokimons_path %>
+  <div class="white-button-wrapper">
+    <span class= "white-button">
+      <%= link_to 'Edit', edit_tokimon_path(@tokimon) %> 
+    </span> 
+    <span class= "white-button">
+      <%= link_to 'Back', tokimons_path %> 
+    </span>
+  </div>  
+</div>
