@@ -167,9 +167,9 @@ class TokimonsController < ApplicationController
 
     @tokimon.destroy
     respond_to do |format|
-      @new_level = (@tokimon_trainer.tokimons.count)/3 + 1
-
       if (Trainer.exists?(tokimon.trainer_id))
+        @new_level = (@tokimon_trainer.tokimons.count)/3 + 1
+
         if(@tokimon_trainer[:level] != @new_level)
           @tokimon_trainer.update(level: @new_level)
           format.html { redirect_to @tokimon, notice: 'Tokimon was successfully destroyed. ' + @tokimon_trainer[:name] + ' level down!' }
